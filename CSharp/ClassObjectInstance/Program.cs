@@ -10,6 +10,22 @@ namespace ClassObjectInstance
             Human human = new Human();
             //L - value : Human 클래스 타입의 참조 지역 변수
             //R - value : Human 객체 생성 후 반환된 객체 참조
+
+            //.연산자 (멤버접근연산자)
+            human.SayAge();
+            human.age = 2;
+            human.SayAge();
+
+            //Class :
+            //객체 타입
+
+            //Object :
+            //객체 : Class 타입으로 메모리공간을 확보한 것
+
+            //Instance :
+            //객체(데이터가 할당된 경우)
+
+            //Instance C object
         }
     }
     internal class Human
@@ -20,12 +36,12 @@ namespace ClassObjectInstance
         //private : 다른 객체/클래스 접근 불가능
         //internal : 동일 어셈블리 내에서 다른 객체가 접근 가능
         //캡슐화 : 
-        int age;
-        float height;
-        double weight;
-        bool isResting;
-        char gender = 'W';
-        string name = "아무개";
+        public int age = 1;
+        private float height;
+        private double weight;
+        private bool isResting;
+        private char gender = 'W';
+        private string name = "아무개";
 
         //c#에는 두가지 접근 형식이 있음
         //값 타입, 참조 타입
@@ -39,21 +55,21 @@ namespace ClassObjectInstance
         {
 
         }
-        //소면자
+        //소멸자
         //힙영역에 할당되었던 객체를 메모리에서 해제하기 위해 호출하는 함수
         ~Human()
         {
 
         }
-        void SayAge()
+        public void SayAge()
         {
             Console.WriteLine(age);
         }
-        void SayHeight()
+        public void SayHeight()
         {
             Console.WriteLine(height);
         }
-        void SayName()
+        public void SayName()
         {
             Console.WriteLine(name);
         }
