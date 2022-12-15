@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Method", "Method\Method.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassObjectInstance", "ClassObjectInstance\ClassObjectInstance.csproj", "{1236D005-A9EE-4201-A742-3E8AE6FD431F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassExample", "ClassExample\ClassExample.csproj", "{FCE22FF7-5E4C-4D44-8D9D-0FC082DDD026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassExample", "ClassExample\ClassExample.csproj", "{FCE22FF7-5E4C-4D44-8D9D-0FC082DDD026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IfStatement", "IfStatement\IfStatement.csproj", "{9052DC2D-DC6E-4D2C-9D0F-8E1818CB5C78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operators", "Operators\Operators.csproj", "{9F9BDF6C-64F9-4F8B-8D45-C6FED7BBC54E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{FCE22FF7-5E4C-4D44-8D9D-0FC082DDD026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE22FF7-5E4C-4D44-8D9D-0FC082DDD026}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE22FF7-5E4C-4D44-8D9D-0FC082DDD026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9052DC2D-DC6E-4D2C-9D0F-8E1818CB5C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9052DC2D-DC6E-4D2C-9D0F-8E1818CB5C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9052DC2D-DC6E-4D2C-9D0F-8E1818CB5C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9052DC2D-DC6E-4D2C-9D0F-8E1818CB5C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F9BDF6C-64F9-4F8B-8D45-C6FED7BBC54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F9BDF6C-64F9-4F8B-8D45-C6FED7BBC54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F9BDF6C-64F9-4F8B-8D45-C6FED7BBC54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F9BDF6C-64F9-4F8B-8D45-C6FED7BBC54E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
