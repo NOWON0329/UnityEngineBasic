@@ -15,11 +15,11 @@ namespace Array2D
 
             public void SetPos(int x, int y)
             {
+                map[y,x] = mapOrigin[y,x]; //이전 위치 롤백
                 this.x = x;
                 this.y = y;
                 Program.map[y, x] = 5;
                 Program.DisplayMap();
-                Console.WriteLine();
             }
 
             public void MoveDown()
@@ -82,16 +82,22 @@ namespace Array2D
             {1,1,0,1,1},
             {1,1,0,0,2}
         };
+        static int[,] mapOrigin = new int[5, 5];
 
         static void Main(string[] args)
         {
             Player player = new Player();
             player.SetPos(0, 0);
-            player.MoveDown();
-            player.MoveDown();
-            player.MoveRight();
-            player.MoveRight();
-            player.MoveLeft();
+
+            string userInput = string.Empty;
+            while (map[4,4] != 5)
+            {
+                Console.ReadLine();
+                if (userInput == "L") player.MoveLeft();
+                else if (userInput == "R") player.MoveRight();
+                else if (userInput == "U") player.MoveUp();
+                else if (userInput == "D") player.MoveDown();
+            }
         }
 
         static void DisplayMap()
