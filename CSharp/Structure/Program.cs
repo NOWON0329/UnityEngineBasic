@@ -48,10 +48,10 @@ namespace Structure
         private int _luk;
 
         //오버로드(overload)
-        //aoroqustnrk ekfmaustj ehddlfgks dlfmadml gkatnfmf wjddmlgkf tn dlTsms rlsmd
+        //매개변수가 다르면서 동일한 이름의 함수를 정의할 수 있는 기능
 
         //생성자 오버로딩
-        //
+        //구조체의 생성자에서는 모든 멤버를 초기화 해야함
         public Stats(int STR, int DEX, int INT, int LUK)
         {
             this._str = STR;
@@ -139,7 +139,7 @@ namespace Structure
             playerplayer .LUK = 10;
 
             //그러면 언제 클래스틑 쓰고 언제 구조체를 쓰냐?
-            //1.멤버들의 크기 총합이 16byte 이상일때는 일반적으로 클래스를 쓴다
+            //1.멤버들의 크기 총합이 16byte 초과일때는 일반적으로 클래스를 쓴다
 
             //참조타입으로 값을 읽고 쓰는것보다 값타입을 읽고 쓰는게 빠르다.
             //하지만 16byte를 초과할때는 레지스터가 두번 이상 값을 읽어야 하기 때문에

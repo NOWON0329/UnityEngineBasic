@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumAndSwitch", "EnumAndSwi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleHorseRacing", "ExampleHorseRacing\ExampleHorseRacing.csproj", "{A90AA531-8F52-4FAA-81BF-DEF12B8CE966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Structure", "Structure\Structure.csproj", "{B5D16E95-3E87-422B-A020-C0DF5496506F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Structure", "Structure\Structure.csproj", "{B5D16E95-3E87-422B-A020-C0DF5496506F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{2D633172-3B24-464A-AD89-8608E3F95FFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{B5D16E95-3E87-422B-A020-C0DF5496506F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D16E95-3E87-422B-A020-C0DF5496506F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D16E95-3E87-422B-A020-C0DF5496506F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D633172-3B24-464A-AD89-8608E3F95FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D633172-3B24-464A-AD89-8608E3F95FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D633172-3B24-464A-AD89-8608E3F95FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D633172-3B24-464A-AD89-8608E3F95FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
