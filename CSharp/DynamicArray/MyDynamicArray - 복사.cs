@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DynamicArray
 {
-    internal class MyDynamicArray
+    internal class MyDynamicArrayOfT
     {
         //const 키워드
         //상수 키워드. const 키워드가 붙은 변수는 
@@ -34,11 +34,14 @@ namespace DynamicArray
             }
         }
 
+        //삽입 알고리즘
+        //일반적으로 0(1)
+        //단, capacity가 모자랄때는 0(N)
         public void Add(int item)
         {
             if(count >= capacity)
             {
-                int[] tmp = new int[capacity * 2];
+                int[] tmp = new int[(int)Math.Ceiling(Math.Log10(capacity)) + 1];
                 for(int i = 0; i<count; i++)
                 {
                     tmp[i] = data[i];
@@ -48,6 +51,8 @@ namespace DynamicArray
             data[count++] = item;
         }
 
+        //탐색 알고리즘
+        //O(N)
         public bool Contains(int target)
         {
             for(int i = 0; i<count; i++)
@@ -73,6 +78,8 @@ namespace DynamicArray
             return default(int);
         }
 
+        //삭제 알고리즘
+        //O(N)
         public bool Remove(int item)
         {
             int index = -1;
@@ -93,6 +100,8 @@ namespace DynamicArray
             return index >= 0;
         }
 
+        //인덱스 삭제 알고리즘
+        //O(N)
         public bool RemoveAt(int index)
         {
             if (index > count - 1)
