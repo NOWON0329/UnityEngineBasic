@@ -74,25 +74,93 @@ namespace LinkedList
         }
         public void AddBefore(Node<T> node, T value)
         {
+            _tmp1 = new Node<T>(value);
 
+            if(node.prev != null)
+            {
+                node.prev.next = _tmp1;
+                _tmp1.prev = node.prev;
+            }
+            else
+            {
+                _first = _tmp1;
+            }
+
+            node.prev = _tmp1;
+            _tmp1.next = node;
         }
         public void AddAfter(Node<T> node, T value)
         {
+            _tmp1 = new Node<T>(value);
 
+            if(node.next != null)
+            {
+                node.next.prev = _tmp1;
+                _tmp1.next = node.next;             
+            }
+            else
+            {
+                _last = _tmp1;
+            }
+
+            node.next = _tmp1;
+            _tmp1.prev = node;
         }
-        public Node<T> Find(int value)
+        public Node<T> Find(T value)
         {
+            _tmp1 = _first;
+            while(_tmp1 != null)
+            {
+                if (Comparer<T>.Default.Compare(_tmp1.value, value) == 0)
+                    return _tmp1;
+
+                _tmp1 = _tmp1.next;
+            }
+
             return null;
         }
-        public Node<T> FindLast(int value)
+        public Node<T> FindLast(T value)
         {
+            _tmp1 = _last;
+            while(_tmp1 != null)
+            {
+                if (Comparer<T>.Default.Compare(_tmp1.value, value) == 0)
+                    return _tmp1;
+
+                _tmp1 = _tmp1.prev;
+            }
             return null;
         }
-        public bool Remove(int value)
+
+        public bool Remove(Node<T> node)
         {
-            return false;
+            if (node == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (node.prev != null)
+                    node.prev.next = node.next;
+                else
+                {
+                    _first = node.next;
+                }
+                if (node.next != null)
+                    node.next.prev = node.prev;
+                else
+                {
+                    _last = node.prev;
+                }
+
+                return true;
+            }
         }
-        public bool RemoveLast(int value)
+        public bool Remove(T value)
+        {
+            return Remove(Find(value));
+        }
+        public bool RemoveLast(T value)
         {
             return false;
         }
