@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHashTable", "MyHashTable\MyHashTable.csproj", "{154BBBD9-FCC2-4081-8D05-FB6C0A2749C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{91A5C336-A826-4489-8757-D010DF0AA16F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{91A5C336-A826-4489-8757-D010DF0AA16F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{540427C3-ABED-4D25-AA5C-62FF0CF255DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{91A5C336-A826-4489-8757-D010DF0AA16F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A5C336-A826-4489-8757-D010DF0AA16F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A5C336-A826-4489-8757-D010DF0AA16F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540427C3-ABED-4D25-AA5C-62FF0CF255DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540427C3-ABED-4D25-AA5C-62FF0CF255DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540427C3-ABED-4D25-AA5C-62FF0CF255DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540427C3-ABED-4D25-AA5C-62FF0CF255DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
