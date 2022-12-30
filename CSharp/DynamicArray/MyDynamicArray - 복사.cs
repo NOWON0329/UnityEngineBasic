@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DynamicArray
 {
-    internal class MyDynamicArrayOfT
+    internal class MyDynamicArray
     {
         //const 키워드
         //상수 키워드. const 키워드가 붙은 변수는 
@@ -123,9 +123,5 @@ namespace DynamicArray
                 data[i] = default(int);
             }
         }
-        //public static bool BiggerThan(int standard)
-        //{
-        //    return value > 20;
-        //}
     }
 }

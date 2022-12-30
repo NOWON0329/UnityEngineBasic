@@ -1,8 +1,10 @@
-﻿using System;
+﻿using LinkedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace LinkedList
 {
@@ -164,5 +166,58 @@ namespace LinkedList
         {
             return false;
         }
+
+        public MyLinkedListEnum<T> GetEnumerator()
+        {
+            return new MyLinkedListEnum<T>(first);
+        }
+
+        public struct MyLinkedListEnum<K>
+        {
+            private Node<K> node;
+            private Node<K> first;
+            private bool firstFlag;
+            public bool FirstFlag
+            {
+                get
+                {
+                    return firstFlag;
+                }
+                set
+                {
+                    firstFlag = value;
+                }
+            }
+           
+
+            public K Current
+            {
+                get
+                {
+                    return node.value;
+                }
+            }
+            public MyLinkedListEnum(Node<K> first)
+            {
+                this.first = first;
+                node = null;
+                firstFlag = false;
+            }
+
+            public bool MoveNext()
+            {
+                if (firstFlag == false)
+                    firstFlag = true;
+                else
+                    node = node.next;
+
+                return node != null;
+            }
+
+            public void Reset()
+            {
+                node = null;
+            }
+        }      
     }
 }

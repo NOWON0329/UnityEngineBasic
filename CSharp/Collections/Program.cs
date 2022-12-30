@@ -60,6 +60,15 @@ namespace Collections
                 Console.WriteLine(node.Value);
                 node = node.Next;
             } 
+
+            //foreach 문
+            //IEnumerator을 iteratinf하기 위한 구문
+            //(IEnumerable의 모든 아이템들을 순회하는 구문)
+            foreach( float item in linkedList)
+            {
+                Console.WriteLine(node.Value);
+                node = node.Next;
+            }
                 
 
             //Dictionary<T>
@@ -81,6 +90,11 @@ namespace Collections
             if(dictionary.ContainsValue("철수"))
             {
 
+            }
+            foreach (KeyValuePair<int, string> item in dictionary)
+            {
+                Console.WriteLine(item.Key);
+                Console.WriteLine(item.Value);
             }
         }
     }
