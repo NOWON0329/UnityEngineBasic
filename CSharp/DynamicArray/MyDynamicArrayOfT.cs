@@ -133,6 +133,11 @@ namespace DynamicArray
             return new MyDynamicArrayEnum<T>(data);
         }
 
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         //열거자의 핵심멤버
         //current :열거된 자료구조에서 현재 가리키고 있는 자료 아이템
         //MoveNext() : 현재에서 그다음 아이템을 가리키도록 하는 함수
@@ -163,6 +168,12 @@ namespace DynamicArray
             public void Reset()
             {
                 index = -1;
+            }
+            //IDispose
+            //관리되지 않는 힙영역 (Unmanaged heap) 의 메모리를 해제하는 내용을 구현하는 함수
+            public void Dispose()
+            {
+
             }
         }
     }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace DynamicArray
 {
@@ -19,7 +21,9 @@ namespace DynamicArray
             daDouble.Add(6.5f);
             daDouble.Add(4.2f);
 
-            MyDynamicArray<double>.MyDynamicArrayEnum<double> enumerator
+            IEnumerator<double> enumerator = daDouble.GetEnumerator();
+ 
+            MyDynamicArray<double>.MyDynamicArrayEnum<double> enumerator2
                 = daDouble.GetEnumerator();
 
             while(enumerator.MoveNext())
