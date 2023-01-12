@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace DynamicArray
 {
@@ -22,6 +23,28 @@ namespace DynamicArray
             daDouble.Add(4.2f);
 
             IEnumerator<double> enumerator = daDouble.GetEnumerator();
+            while(enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+            enumerator.Reset();
+            enumerator.Dispose();
+
+            //using : Dispose() 호출을 보장하는 구문. IDisposable을 상속받은 객체만 인자로 줄 수 있다.
+            MyDynamicArray<int> daInt = new MyDynamicArray<int>();
+            using (IEnumerator<int> enumerator_int = daInt.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Console.WriteLine(enumerator.Current);
+                }
+                enumerator.Reset();
+            }
+
+            foreach (var item in daDouble)
+            {
+
+            }
  
             MyDynamicArray<double>.MyDynamicArrayEnum<double> enumerator2
                 = daDouble.GetEnumerator();
