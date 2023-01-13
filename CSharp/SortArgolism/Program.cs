@@ -9,7 +9,9 @@ namespace SortArgolism
             int[] arr = {1, 4, 2, 5, 6, 9, 3, 0, 8, 7};
             //SortAlgorism.BubbleSort(arr);
             //SortAlgorism.SelectionSort(arr);
-            SortAlgorism.InsertionSort(arr);
+            //SortAlgorism.InsertionSort(arr);
+            //SortAlgorism.MergeSort(arr);
+            SortAlgorism.QuickSort(arr);
             for(int i = 0; i<arr.Length; i++)
             {
                 Console.WriteLine($"{arr[i]}");
