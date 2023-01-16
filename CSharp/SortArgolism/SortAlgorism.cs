@@ -126,8 +126,9 @@ namespace SortArgolism
         /// <summary>
         /// 퀵 정렬
         /// 0(N^2)
+        /// 0(NLogN)
         /// 세타(NLogN)
-        /// stable : 값이 동일한 요소들을 정렬한 후에 기존 순서가 보장됨
+        /// UnStable
         /// </summary>
         public static void QuickSort(int[] arr)
         {
@@ -158,6 +159,87 @@ namespace SortArgolism
                 else
                 {
                     return end; //return pivot index
+                }
+            }
+        }
+        /// <summary>
+        /// max -                                             힙 정렬
+        /// 0(N^2)
+        /// shiftup heapify 시 0(NLogN)
+        /// shiftdown heapify 시 0(n^2)
+        /// UnStable
+        /// </summary>
+        private static void HeapSort(int[] arr)
+        {
+            //힙구조로 변환 (정렬하면서)
+            //HeapifyTopDown(arr);
+            HeapifyBottomUp(arr);
+
+            //원래 구조로 변환
+            InverseHeapify(arr);
+        }
+        // 0(NLogN)
+        public static void HeapifyTopDown(int[] arr)
+        {
+            int end = 1;
+            while(end < arr.Length)
+            {
+                ShiftUp(arr, 0, end++);
+            }
+        }
+        // 0(n^2)
+        public static void HeapifyBottomUp(int[] arr)
+        {
+            int end = arr.Length - 1;
+            int current = end;
+
+            while (current >= 0)
+            {
+                ShiftDown(arr, end, current);
+            }
+        }
+        public static void InverseHeapify(int[] arr)
+        {
+            int end = arr.Length - 1;
+            while(end > 0)
+            {
+                Swap(ref arr[0], ref arr[end]);
+                end--; //마지막 아이템 고정
+                ShiftDown(arr, end, 1);
+            }
+        }
+        public static void ShiftUp(int[] arr, int root, int current)
+        {
+            int parent = (current - 1) / 2;
+            while(current > root)
+            {
+                if (arr[current] > arr[parent])
+                {
+                    Swap(ref arr[current], ref arr[parent]);
+                    current = parent;
+                    parent = (current - 1) / 2;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        public static void ShiftDown(int[] arr, int end, int current)
+        {
+            int parent = (current - 1) / 2;
+
+            while(current <= end)
+            {
+                //오른쪽 자식이 더 크면 오른쪽으로 스왑
+                if (current + 1 <= end &&
+                    arr[current] < arr[current + 1])
+                    current++;
+                if (arr[current] > arr[parent])
+                {
+                    Swap(ref arr[current], ref arr[parent]);
+                    parent = current;
+                    current = parent * 2 + 1; //왼쪽 자식으로 감
                 }
             }
         }
