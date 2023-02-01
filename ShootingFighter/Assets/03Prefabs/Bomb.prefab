@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4382802893148505136}
   - component: {fileID: 4382802893148505137}
-  - component: {fileID: 4382802893148505134}
+  - component: {fileID: 359265785199028667}
   m_Layer: 15
-  m_Name: Bullet
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4382802893148505134
+--- !u!114 &359265785199028667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,15 +57,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4382802893148505135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247d73e33ef8bc4eb949046fa206a79, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bf8113a8f5fb26479f7e7da084cb946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 5
   _enemyMask:
     serializedVersion: 2
     m_Bits: 1048576
-  _damage: 20
-  _explosionEffect: {fileID: 3386708964611358812, guid: a6c3e855c90f8a24a823f5fdc65f2216, type: 3}
+  _damage: 40
+  _range: 4
+  _explosionEffect: {fileID: 441858496078073323, guid: e4f1f6b8ebf55704489d5cc81d9ac5fa, type: 3}
 --- !u!1 &4382802893152147855
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85e90977d0070114d84e1d38ab0d867b, type: 2}
+  - {fileID: 2100000, guid: 6222b95e1ca7ec94c8544f03e88eb971, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

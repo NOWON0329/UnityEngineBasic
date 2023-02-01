@@ -14,7 +14,10 @@ public class Enemy : MonoBehaviour
         set 
         {
             if (value < 0)
+            {
+                Score.instance.score += value;
                 Destroy(gameObject);
+            }
 
             _hp = value;
             _hpSlider.value = (float)value / _hpMax;
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Slider _hpSlider;
     [SerializeField] private LayerMask _playerMask;
     [SerializeField] private int _damage = 10;
+    [SerializeField] private int _Value;
 
     private void Awake()
     {
