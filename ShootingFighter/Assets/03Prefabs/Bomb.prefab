@@ -64,7 +64,7 @@ MonoBehaviour:
   _enemyMask:
     serializedVersion: 2
     m_Bits: 1048576
-  _damage: 40
+  _damage: 100
   _range: 4
   _explosionEffect: {fileID: 441858496078073323, guid: e4f1f6b8ebf55704489d5cc81d9ac5fa, type: 3}
 --- !u!1 &4382802893152147855

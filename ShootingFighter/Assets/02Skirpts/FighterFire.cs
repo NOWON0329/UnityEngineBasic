@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FighterFire : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class FighterFire : MonoBehaviour
 
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private GameObject _bombPrefab;
-    [SerializeField] private Transform _firePoint;
+    [SerializeField] private Transform[] _firePoint;
+    [SerializeField] private Transform _bombPoint;
     [SerializeField] private float _bulletReloadTime = 0.2f;
     [SerializeField] private float _bombReloadTime = 1f;
     private float _bulletReloadTimer;
@@ -55,7 +57,10 @@ public class FighterFire : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 //todo -> 醚舅 积己
-                Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity);
+                for(int i = 0; i<_firePoint.Length; i++)
+                {
+                    Instantiate(_bulletPrefab, _firePoint[i].position, Quaternion.identity);
+                }
                 _bulletReloadTimer = _bulletReloadTime;
             }
         }
@@ -73,7 +78,7 @@ public class FighterFire : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     //todo -> 醚舅 积己
-                    Instantiate(_bombPrefab, _firePoint.position, Quaternion.identity);
+                    Instantiate(_bombPrefab, _bombPoint.position, Quaternion.identity);
                     bombNum--;
                     _bombReloadTimer = _bombReloadTime;
                 }

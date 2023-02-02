@@ -38,7 +38,7 @@ public class Bomb : MonoBehaviour
                 Destroy(effect.gameObject, _explosionEffect.main.duration + _explosionEffect.main.startLifetime.constantMax);
 
                 enemy.GetComponent<Enemy>().hp
-                    -= (int)(1 - (Vector3.Distance(_tr.position, enemy.transform.position) / _range) * _damage);
+                    -= (int)((Vector3.Distance(_tr.position, enemy.transform.position) / _range) * _damage);
             }          
         }
         Destroy(this.gameObject);
