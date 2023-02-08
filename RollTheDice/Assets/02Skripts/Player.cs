@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,66 @@ public class Player : MonoBehaviour
         instance = this;
     }
 
+    public int star
+    {
+        get
+        {
+            return _star;
+        }
+        private set
+        {
+            _star = value;
+            onStarChanged?.Invoke(value);
+        }
+    }
+
+    private int _star;
+    public event Action<int> onStarChanged;
+
+    public const int DIRECTION_FORWARD = 1;
+    public const int DIRECTION_BACKWARD = -1;
+
+    public int direction
+    {
+        get
+        {
+            return _direction;
+        }
+        set
+        {
+            _direction = value;
+            onDirectionChanged?.Invoke(value);
+        }
+    }
+    public int _direction = DIRECTION_FORWARD; 
+    public event Action<int> onDirectionChanged;
     [SerializeField] private TileMap _tileMap;
     private List<TileStar> _tileStars = new List<TileStar>();
+    private int _currentTypeIndex = -1;
 
-    public void Move(int target)
+    public void Move(int diceValue)
     {
-        //transform.Translate(target, Space.World);
+        //Á¤¹æÇâ
+        if(direction == DIRECTION_FORWARD)
+        {
+            //»ûº° È¹µæ
+            EarnStarValue(_currentTypeIndex, diceValue);
+
+            //´ÙÀ½ Ä­ °è»ê
+            _currentTypeIndex += diceValue;
+            _currentTypeIndex %= _tileMap.total;
+        }
+        //¿ª¹æÇâ
+        else if(direction == DIRECTION_BACKWARD)
+        {
+            _currentTypeIndex -= diceValue;
+            if (_currentTypeIndex < 0)
+                _currentTypeIndex += _tileMap.total;
+
+            direction = DIRECTION_FORWARD;
+        }
+
+        transform.position += _tileMap[_currentTypeIndex].transform.position;
     }
     private void Start()
     {
@@ -57,5 +112,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        star += sum;
     }
 }

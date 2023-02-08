@@ -18,9 +18,6 @@ public class DiceManager : MonoBehaviour
         goldenDice = _goldenDiceInit = 2;
     }
 
-    public const int DIRECTION_FORWARD = 1;
-    public const int DIRECTION_BACKWARD = -1;
-    public int direction = DIRECTION_FORWARD;
     public int normalDice
     {
         get
@@ -52,7 +49,6 @@ public class DiceManager : MonoBehaviour
     public event Action<int> onNormalDiceChanged;
     public event Action<int> onGoldenDiceChanged;
     public event Action<int> onRollDice;
-    private int _currentTypeIndex;
 
     public int RollNormalDice()
     {
@@ -60,7 +56,7 @@ public class DiceManager : MonoBehaviour
         if (_normalDice <= 0)
             return -1;
 
-        _normalDice--; //주사위 차감
+        normalDice--; //주사위 차감
         int diceValue = Random.Range(1, 7); //랜덤한 주사위값 생성
         onRollDice?.Invoke(diceValue); //구독자들에게 주사위 굴렸다는 알림 통지
         return diceValue;
@@ -70,7 +66,7 @@ public class DiceManager : MonoBehaviour
         if (_goldenDice <= 0)
             return -1;
 
-        _goldenDice--;
+        goldenDice--;
         onRollDice?.Invoke(diceValue);
         return diceValue;
     }
