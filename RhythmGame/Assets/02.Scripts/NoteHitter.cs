@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class NoteHitter : MonoBehaviour
@@ -61,12 +62,30 @@ public class NoteHitter : MonoBehaviour
 
             float distance = Mathf.Abs(colsFiltered.First().transform.position.y - transform.position.y);
 
-            if (distance < PlaySettings.HIT_JUDGE_RANGE_COOL) hitJudge = HitJudge.Cool;
-            else if (distance < PlaySettings.HIT_JUDGE_RANGE_GREAT) hitJudge = HitJudge.Great;
-            else if (distance < PlaySettings.HIT_JUDGE_RANGE_GOOD) hitJudge = HitJudge.Good;
-            else if (distance < PlaySettings.HIT_JUDGE_RANGE_MISS) hitJudge = HitJudge.Miss;
+            if (distance < PlaySettings.HIT_JUDGE_RANGE_COOL)
+            {
+                hitJudge = HitJudge.Cool;
+                GameStatus.IncreaseCoolCount();
+            }
+            else if (distance < PlaySettings.HIT_JUDGE_RANGE_GREAT)
+            {
+                hitJudge = HitJudge.Great;
+                GameStatus.IncreaseGreatCount();
+            }
+            else if (distance < PlaySettings.HIT_JUDGE_RANGE_GOOD)
+            {
+                hitJudge = HitJudge.Good;
+                GameStatus.IncreaseGoodCount();
+            }
+            else if (distance < PlaySettings.HIT_JUDGE_RANGE_MISS)
+            {
+                hitJudge = HitJudge.Miss;
+                GameStatus.IncreaseMissCount();
+            }
 
             Destroy(colsFiltered.First().gameObject);
+         
+            HitAlertManager.instance.PopUp(hitJudge);
         }
     }
 
