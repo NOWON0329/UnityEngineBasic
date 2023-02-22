@@ -15,7 +15,15 @@ public class GameStatus : MonoBehaviour
         }
     }
     public static int maxCombo { get; set; }
-    public static int score { get; set; }
+    public static int score
+    {
+        get => _score;
+        set
+        {
+            _score = value;
+            ScoringText.instance.score = value;
+        }
+    }
 
     public static int coolCount;
     public static int greatCount;
@@ -24,6 +32,7 @@ public class GameStatus : MonoBehaviour
     public static int badCount;   
 
     private static int _currentCombo;
+    private static int _score;
 
     public static void IncreaseCoolCount()
     {
